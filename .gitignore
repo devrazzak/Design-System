@@ -1,0 +1,52 @@
+# dependencies
+node_modules/
+
+# build outputs
+dist/
+build/
+.out/
+
+# logs
+*.log
+
+# environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/
+
+# lockfiles (optional)
+# pnpm-lock.yaml (usually keep it, so DON'T ignore)
+
+# turbo
+.turbo/
+
+# coverage
+coverage/
+
+# typescript
+*.tsbuildinfo
+
+# tokens build output
+packages/tokens/dist/
+
+# react build output
+packages/react/dist/
+
+# icons generated files
+packages/icons/src/components/
+
+# storybook build
+apps/storybook/storybook-static/
+
+# next build
+apps/docs/.next/
+
+# playground build
+apps/playground/dist/
