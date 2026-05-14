@@ -1,0 +1,38 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />
+
+# My Design System
+
+Welcome to the design system — the single source of truth for all UI decisions.
+
+## Quick links
+
+- [Button](/docs/components-button--docs)
+- [Color Tokens](/docs/tokens-colors--docs)
+
+## How to use
+
+```bash
+pnpm add @ds/react @ds/tokens
+```
+
+```tsx
+// 1. Import tokens CSS (once in your app entry)
+import "@ds/tokens/css";
+
+// 2. Use components
+import { Button } from "@ds/react";
+
+function App() {
+  return <Button onClick={() => alert("clicked")}>Hello</Button>;
+}
+```
+
+## Theme toggle
+
+Dark mode করার জন্য `<html>` তে `data-theme="dark"` attribute set করো:
+
+```ts
+document.documentElement.setAttribute("data-theme", "dark");
+```

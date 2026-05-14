@@ -1,0 +1,73 @@
+{
+  "$metadata": {
+    "type": "core",
+    "description": "Motion and shadow primitives"
+  },
+  "motion": {
+    "duration": {
+      "instant": { "$type": "duration", "$value": "0ms" },
+      "fast": { "$type": "duration", "$value": "100ms" },
+      "normal": { "$type": "duration", "$value": "200ms" },
+      "slow": { "$type": "duration", "$value": "300ms" },
+      "slower": { "$type": "duration", "$value": "500ms" }
+    },
+    "easing": {
+      "standard": { "$type": "cubicBezier", "$value": [0.4, 0, 0.2, 1] },
+      "decelerate": { "$type": "cubicBezier", "$value": [0.0, 0, 0.2, 1] },
+      "accelerate": { "$type": "cubicBezier", "$value": [0.4, 0, 1, 1] }
+    }
+  },
+  "shadow": {
+    "sm": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0px",
+        "color": "#0000000d"
+      }
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "4px",
+        "blur": "8px",
+        "spread": "0px",
+        "color": "#00000014"
+      }
+    },
+    "lg": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "24px",
+        "spread": "0px",
+        "color": "#0000001f"
+      }
+    },
+    "focus": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "0px",
+        "blur": "0px",
+        "spread": "3px",
+        "color": "#fa823240"
+      },
+      "$description": "Focus ring — uses primary color at 25% opacity"
+    }
+  },
+  "zIndex": {
+    "hide": { "$type": "number", "$value": -1 },
+    "base": { "$type": "number", "$value": 0 },
+    "raised": { "$type": "number", "$value": 10 },
+    "dropdown": { "$type": "number", "$value": 1000 },
+    "overlay": { "$type": "number", "$value": 1100 },
+    "modal": { "$type": "number", "$value": 1200 },
+    "toast": { "$type": "number", "$value": 1300 },
+    "tooltip": { "$type": "number", "$value": 1400 }
+  }
+}

@@ -1,16 +1,28 @@
 {
-  "name": "tokens",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@ds/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Design tokens — single source of truth for all visual decisions",
+  "exports": {
+    ".": {
+      "import": "./dist/js/index.js",
+      "types": "./dist/js/index.d.ts"
+    },
+    "./css": "./dist/css/tokens.css",
+    "./css/light": "./dist/css/tokens-light.css",
+    "./css/dark": "./dist/css/tokens-dark.css",
+    "./tailwind": "./dist/tailwind/theme.css"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.33.2",
-  "dependencies": {
-    "style-dictionary": "^5.4.0"
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch"
+  },
+  "devDependencies": {
+    "@tokens-studio/sd-transforms": "^2.0.3",
+    "chokidar": "^5.0.0",
+    "style-dictionary": "^4.4.0"
   }
 }

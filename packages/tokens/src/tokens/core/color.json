@@ -1,0 +1,95 @@
+{
+  "$metadata": {
+    "type": "core",
+    "description": "Primitive color tokens — raw values from Figma. Never reference these directly in components. Use semantic tokens instead."
+  },
+  "color": {
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Pure white"
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000",
+      "$description": "Pure black"
+    },
+    "gray": {
+      "50": { "$type": "color", "$value": "#f2f4f5" },
+      "100": { "$type": "color", "$value": "#e4e7e9" },
+      "200": { "$type": "color", "$value": "#c9cfd2" },
+      "300": { "$type": "color", "$value": "#adb7bc" },
+      "400": { "$type": "color", "$value": "#929fa5" },
+      "500": { "$type": "color", "$value": "#77878f" },
+      "600": { "$type": "color", "$value": "#5f6c72" },
+      "700": { "$type": "color", "$value": "#475156" },
+      "800": { "$type": "color", "$value": "#303639" },
+      "900": { "$type": "color", "$value": "#191c1f" }
+    },
+    "primary": {
+      "$description": "Orange brand color — the main action color",
+      "50": { "$type": "color", "$value": "#fff3eb" },
+      "100": { "$type": "color", "$value": "#ffe7d6" },
+      "200": { "$type": "color", "$value": "#ffcead" },
+      "300": { "$type": "color", "$value": "#ffb685" },
+      "400": { "$type": "color", "$value": "#ff9d5c" },
+      "500": { "$type": "color", "$value": "#fa8232" },
+      "600": { "$type": "color", "$value": "#de732d" },
+      "700": { "$type": "color", "$value": "#99501f" },
+      "800": { "$type": "color", "$value": "#663514" },
+      "900": { "$type": "color", "$value": "#331b0a" }
+    },
+    "secondary": {
+      "$description": "Blue secondary color",
+      "50": { "$type": "color", "$value": "#eaf6fe" },
+      "100": { "$type": "color", "$value": "#d5edfd" },
+      "200": { "$type": "color", "$value": "#abdbfa" },
+      "300": { "$type": "color", "$value": "#81c9f8" },
+      "400": { "$type": "color", "$value": "#57b7f5" },
+      "500": { "$type": "color", "$value": "#2da5f3" },
+      "600": { "$type": "color", "$value": "#2484c2" },
+      "700": { "$type": "color", "$value": "#1b6392" },
+      "800": { "$type": "color", "$value": "#124261" },
+      "900": { "$type": "color", "$value": "#092131" }
+    },
+    "success": {
+      "$description": "Green — positive feedback, completed states",
+      "50": { "$type": "color", "$value": "#eaf7e9" },
+      "100": { "$type": "color", "$value": "#d5f0d3" },
+      "200": { "$type": "color", "$value": "#abe0a7" },
+      "300": { "$type": "color", "$value": "#81d17c" },
+      "400": { "$type": "color", "$value": "#57c150" },
+      "500": { "$type": "color", "$value": "#2db224" },
+      "600": { "$type": "color", "$value": "#248e1d" },
+      "700": { "$type": "color", "$value": "#1b6b16" },
+      "800": { "$type": "color", "$value": "#12470e" },
+      "900": { "$type": "color", "$value": "#092407" }
+    },
+    "warning": {
+      "$description": "Yellow — caution, review-needed states",
+      "50": { "$type": "color", "$value": "#fdfae7" },
+      "100": { "$type": "color", "$value": "#fbf4ce" },
+      "200": { "$type": "color", "$value": "#f7e99e" },
+      "300": { "$type": "color", "$value": "#f3de6d" },
+      "400": { "$type": "color", "$value": "#efd33d" },
+      "500": { "$type": "color", "$value": "#ebc80c" },
+      "600": { "$type": "color", "$value": "#bca00a" },
+      "700": { "$type": "color", "$value": "#8d7807" },
+      "800": { "$type": "color", "$value": "#5e5005" },
+      "900": { "$type": "color", "$value": "#2f2802" }
+    },
+    "danger": {
+      "$description": "Red — destructive actions, error states",
+      "50": { "$type": "color", "$value": "#fdeeee" },
+      "100": { "$type": "color", "$value": "#fcdede" },
+      "200": { "$type": "color", "$value": "#f8bcbc" },
+      "300": { "$type": "color", "$value": "#f59b9b" },
+      "400": { "$type": "color", "$value": "#f17979" },
+      "500": { "$type": "color", "$value": "#ee5858" },
+      "600": { "$type": "color", "$value": "#be4646" },
+      "700": { "$type": "color", "$value": "#8f3535" },
+      "800": { "$type": "color", "$value": "#5f2323" },
+      "900": { "$type": "color", "$value": "#301212" }
+    }
+  }
+}

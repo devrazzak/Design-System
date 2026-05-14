@@ -1,0 +1,17 @@
+/* visually-hidden.module.css
+ *
+ * Hides visually but remains accessible to screen readers.
+ * This technique from WebAIM is the industry standard.
+ * Do NOT use display:none or visibility:hidden — those hide from SRs too.
+ */
+.root {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
