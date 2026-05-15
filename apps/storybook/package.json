@@ -8,8 +8,8 @@
     "test-storybook": "test-storybook"
   },
   "dependencies": {
-    "@ds/react": "workspace:*",
-    "@ds/tokens": "workspace:*"
+    "@raxora/react": "workspace:*",
+    "@raxora/tokens": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^8.6.18",

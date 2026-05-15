@@ -1,12 +1,12 @@
 {
-  "name": "my-design-system",
+  "name": "raxora-design-system",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "type": "module",
   "scripts": {
-    "build:tokens": "pnpm --filter @ds/tokens build",
-    "build": "pnpm --filter @ds/tokens build && pnpm --filter @ds/react build",
+    "build:tokens": "pnpm --filter @raxora/tokens build",
+    "build": "pnpm --filter @raxora/tokens build && pnpm --filter @raxora/react build",
     "dev:storybook": "pnpm --filter storybook dev",
     "test": "vitest run",
     "test:watch": "vitest",

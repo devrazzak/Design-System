@@ -1,8 +1,8 @@
 {
-  "name": "@ds/react",
+  "name": "@raxora/react",
   "version": "0.1.0",
   "type": "module",
-  "description": "Design system React components",
+  "description": "Raxora Design system React components",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -31,7 +31,7 @@
     }
   },
   "dependencies": {
-    "@ds/tokens": "workspace:*"
+    "@raxora/tokens": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.18",

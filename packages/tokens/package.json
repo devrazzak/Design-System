@@ -1,8 +1,8 @@
 {
-  "name": "@ds/tokens",
+  "name": "@raxora/tokens",
   "version": "0.1.0",
   "type": "module",
-  "description": "Design tokens — single source of truth for all visual decisions",
+  "description": "Raxora Design tokens — single source of truth for all visual decisions",
   "exports": {
     ".": {
       "import": "./dist/js/index.js",

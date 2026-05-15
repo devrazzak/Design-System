@@ -1,3 +1,9 @@
 packages:
   - "packages/*"
   - "apps/*"
+allowBuilds:
+  '@bundled-es-modules/glob': false
+  '@swc/core': false
+  esbuild: false
+  style-dictionary: false
+  unrs-resolver: false

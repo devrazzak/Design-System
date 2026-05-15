@@ -13,10 +13,10 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "paths": {
-      "@ds/tokens": ["./packages/tokens/src/index.ts"],
-      "@ds/tokens/css": ["./packages/tokens/dist/css/tokens.css"],
-      "@ds/react": ["./packages/react/src/index.ts"],
-      "@ds/react/*": ["./packages/react/src/*"]
+      "@raxora/tokens": ["./packages/tokens/src/index.ts"],
+      "@raxora/tokens/css": ["./packages/tokens/dist/css/tokens.css"],
+      "@raxora/react": ["./packages/react/src/index.ts"],
+      "@raxora/react/*": ["./packages/react/src/*"]
     }
   },
   "include": ["packages/*/src"],

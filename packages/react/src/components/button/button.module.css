@@ -2,7 +2,7 @@
  * Button styles
  * =============
  * Rules:
- *   1. ONLY reference CSS custom properties from @ds/tokens — never raw values.
+ *   1. ONLY reference CSS custom properties from @raxora/tokens — never raw values.
  *   2. Variants via data-* attribute selectors — no class name concatenation.
  *   3. Native CSS nesting — no Sass, no preprocessors.
  *   4. Logical properties for RTL support (padding-inline, not padding-left).
@@ -12,47 +12,57 @@
 /* ── Base ──────────────────────────────────────────────────────────────────── */
 .button {
   /* Layout */
-  display:         inline-flex;
-  align-items:     center;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap:             var(--component-button-gap, var(--space-2));
+  gap: var(--component-button-gap, var(--space-2));
 
   /* Sizing — size variant adjusts these via data-size */
-  block-size:      var(--component-button-size-md-height, var(--size-control-md));
-  padding-block:   var(--component-button-size-md-padding-block, var(--space-2));
-  padding-inline:  var(--component-button-size-md-padding-inline, var(--space-4));
+  block-size: var(--component-button-size-md-height, var(--size-control-md));
+  padding-block: var(--component-button-size-md-padding-block, var(--space-2));
+  padding-inline: var(
+    --component-button-size-md-padding-inline,
+    var(--space-4)
+  );
 
   /* Typography */
-  font-family:     var(--font-family-sans, system-ui, sans-serif);
-  font-size:       var(--component-button-size-md-font-size, var(--font-size-sm));
-  font-weight:     var(--component-button-font-weight, var(--font-weight-medium));
-  line-height:     var(--font-line-height-tight, 1.25);
-  white-space:     nowrap;
+  font-family: var(--font-family-sans, system-ui, sans-serif);
+  font-size: var(--component-button-size-md-font-size, var(--font-size-sm));
+  font-weight: var(--component-button-font-weight, var(--font-weight-medium));
+  line-height: var(--font-line-height-tight, 1.25);
+  white-space: nowrap;
   text-decoration: none;
 
   /* Visual */
-  border:          1px solid transparent;
-  border-radius:   var(--component-button-border-radius, var(--radius-md));
-  cursor:          pointer;
-  user-select:     none;
-  appearance:      none;
+  border: 1px solid transparent;
+  border-radius: var(--component-button-border-radius, var(--radius-md));
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
 
   /* Transitions */
-  transition-property:        background-color, border-color, color, box-shadow, transform;
-  transition-duration:        var(--component-button-transition-duration, var(--motion-duration-fast));
-  transition-timing-function: var(--motion-easing-standard, cubic-bezier(0.4, 0, 0.2, 1));
+  transition-property:
+    background-color, border-color, color, box-shadow, transform;
+  transition-duration: var(
+    --component-button-transition-duration,
+    var(--motion-duration-fast)
+  );
+  transition-timing-function: var(
+    --motion-easing-standard,
+    cubic-bezier(0.4, 0, 0.2, 1)
+  );
 
   /* WCAG 2.2: minimum touch target 24×24px */
   min-inline-size: 24px;
-  min-block-size:  24px;
+  min-block-size: 24px;
 
   /* ── Focus ring ── */
   /* Using :focus-visible — only shows ring for keyboard navigation, */
   /* not mouse click. Respects user preference for pointer devices.  */
   &:focus-visible {
-    outline:        none;
-    box-shadow:     0 0 0 var(--component-button-focus-ring-width, 3px)
-                    var(--semantic-color-border-focus, var(--color-primary-500));
+    outline: none;
+    box-shadow: 0 0 0 var(--component-button-focus-ring-width, 3px)
+      var(--semantic-color-border-focus, var(--color-primary-500));
   }
 
   /* ── Hover — only when not disabled ── */
@@ -69,7 +79,7 @@
   /* Note: we do NOT use pointer-events:none — that hides the button  */
   /* from screen readers. opacity + cursor:not-allowed is correct.    */
   &:disabled {
-    cursor:  not-allowed;
+    cursor: not-allowed;
     opacity: 0.5;
   }
 
@@ -88,135 +98,179 @@
 
 /* Primary */
 .button[data-variant="primary"] {
-  background-color: var(--component-button-variant-primary-bg,
-                    var(--semantic-color-action-primary-bg));
-  border-color:     var(--component-button-variant-primary-border, transparent);
-  color:            var(--component-button-variant-primary-text,
-                    var(--semantic-color-action-primary-text));
+  background-color: var(
+    --component-button-variant-primary-bg,
+    var(--semantic-color-action-primary-bg)
+  );
+  border-color: var(--component-button-variant-primary-border, transparent);
+  color: var(
+    --component-button-variant-primary-text,
+    var(--semantic-color-action-primary-text)
+  );
 
   &:hover:not(:disabled) {
-    background-color: var(--component-button-variant-primary-bg-hover,
-                      var(--semantic-color-action-primary-bg-hover));
+    background-color: var(
+      --component-button-variant-primary-bg-hover,
+      var(--semantic-color-action-primary-bg-hover)
+    );
   }
 
   &:active:not(:disabled) {
-    background-color: var(--component-button-variant-primary-bg-active,
-                      var(--semantic-color-action-primary-bg-active));
+    background-color: var(
+      --component-button-variant-primary-bg-active,
+      var(--semantic-color-action-primary-bg-active)
+    );
   }
 
   &:disabled {
-    background-color: var(--component-button-variant-primary-bg-disabled,
-                      var(--semantic-color-action-primary-bg-disabled));
-    color:            var(--component-button-variant-primary-text-disabled,
-                      var(--semantic-color-action-primary-text-disabled));
+    background-color: var(
+      --component-button-variant-primary-bg-disabled,
+      var(--semantic-color-action-primary-bg-disabled)
+    );
+    color: var(
+      --component-button-variant-primary-text-disabled,
+      var(--semantic-color-action-primary-text-disabled)
+    );
   }
 }
 
 /* Secondary */
 .button[data-variant="secondary"] {
-  background-color: var(--component-button-variant-secondary-bg,
-                    var(--semantic-color-action-secondary-bg));
-  border-color:     var(--component-button-variant-secondary-border,
-                    var(--semantic-color-action-secondary-border));
-  color:            var(--component-button-variant-secondary-text,
-                    var(--semantic-color-action-secondary-text));
+  background-color: var(
+    --component-button-variant-secondary-bg,
+    var(--semantic-color-action-secondary-bg)
+  );
+  border-color: var(
+    --component-button-variant-secondary-border,
+    var(--semantic-color-action-secondary-border)
+  );
+  color: var(
+    --component-button-variant-secondary-text,
+    var(--semantic-color-action-secondary-text)
+  );
 
   &:hover:not(:disabled) {
-    background-color: var(--component-button-variant-secondary-bg-hover,
-                      var(--semantic-color-action-secondary-bg-hover));
+    background-color: var(
+      --component-button-variant-secondary-bg-hover,
+      var(--semantic-color-action-secondary-bg-hover)
+    );
   }
 
   &:active:not(:disabled) {
-    background-color: var(--component-button-variant-secondary-bg-active,
-                      var(--semantic-color-action-secondary-bg-active));
+    background-color: var(
+      --component-button-variant-secondary-bg-active,
+      var(--semantic-color-action-secondary-bg-active)
+    );
   }
 }
 
 /* Ghost */
 .button[data-variant="ghost"] {
   background-color: var(--component-button-variant-ghost-bg, transparent);
-  border-color:     transparent;
-  color:            var(--component-button-variant-ghost-text,
-                    var(--semantic-color-action-ghost-text));
+  border-color: transparent;
+  color: var(
+    --component-button-variant-ghost-text,
+    var(--semantic-color-action-ghost-text)
+  );
 
   &:hover:not(:disabled) {
-    background-color: var(--component-button-variant-ghost-bg-hover,
-                      var(--semantic-color-action-ghost-bg-hover));
+    background-color: var(
+      --component-button-variant-ghost-bg-hover,
+      var(--semantic-color-action-ghost-bg-hover)
+    );
   }
 }
 
 /* Danger */
 .button[data-variant="danger"] {
-  background-color: var(--component-button-variant-danger-bg,
-                    var(--semantic-color-action-danger-bg));
-  border-color:     transparent;
-  color:            var(--component-button-variant-danger-text,
-                    var(--semantic-color-action-danger-text));
+  background-color: var(
+    --component-button-variant-danger-bg,
+    var(--semantic-color-action-danger-bg)
+  );
+  border-color: transparent;
+  color: var(
+    --component-button-variant-danger-text,
+    var(--semantic-color-action-danger-text)
+  );
 
   &:hover:not(:disabled) {
-    background-color: var(--component-button-variant-danger-bg-hover,
-                      var(--semantic-color-action-danger-bg-hover));
+    background-color: var(
+      --component-button-variant-danger-bg-hover,
+      var(--semantic-color-action-danger-bg-hover)
+    );
   }
 
   &:active:not(:disabled) {
-    background-color: var(--component-button-variant-danger-bg-active,
-                      var(--semantic-color-action-danger-bg-active));
+    background-color: var(
+      --component-button-variant-danger-bg-active,
+      var(--semantic-color-action-danger-bg-active)
+    );
   }
 }
 
 /* ── Sizes ─────────────────────────────────────────────────────────────────── */
 
 .button[data-size="sm"] {
-  block-size:     var(--component-button-size-sm-height, var(--size-control-sm));
-  padding-block:  var(--component-button-size-sm-padding-block, var(--space-1));
-  padding-inline: var(--component-button-size-sm-padding-inline, var(--space-3));
-  font-size:      var(--component-button-size-sm-font-size, var(--font-size-xs));
+  block-size: var(--component-button-size-sm-height, var(--size-control-sm));
+  padding-block: var(--component-button-size-sm-padding-block, var(--space-1));
+  padding-inline: var(
+    --component-button-size-sm-padding-inline,
+    var(--space-3)
+  );
+  font-size: var(--component-button-size-sm-font-size, var(--font-size-xs));
 }
 
 .button[data-size="lg"] {
-  block-size:     var(--component-button-size-lg-height, var(--size-control-lg));
-  padding-block:  var(--component-button-size-lg-padding-block, var(--space-3));
-  padding-inline: var(--component-button-size-lg-padding-inline, var(--space-6));
-  font-size:      var(--component-button-size-lg-font-size, var(--font-size-md));
+  block-size: var(--component-button-size-lg-height, var(--size-control-lg));
+  padding-block: var(--component-button-size-lg-padding-block, var(--space-3));
+  padding-inline: var(
+    --component-button-size-lg-padding-inline,
+    var(--space-6)
+  );
+  font-size: var(--component-button-size-lg-font-size, var(--font-size-md));
 }
 
 /* ── Internals ─────────────────────────────────────────────────────────────── */
 
 /* Icon wrapper — sizes icon to match font-size */
 .icon {
-  display:         inline-flex;
-  align-items:     center;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  flex-shrink:     0;
-  inline-size:     1em;
-  block-size:      1em;
+  flex-shrink: 0;
+  inline-size: 1em;
+  block-size: 1em;
 
   & > svg,
   & > img {
     inline-size: 100%;
-    block-size:  100%;
+    block-size: 100%;
   }
 }
 
 /* Label — text content; allows truncation */
 .label {
-  overflow:      hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space:   nowrap;
+  white-space: nowrap;
 }
 
 /* Loading spinner */
 .spinner {
-  display:    inline-block;
+  display: inline-block;
   inline-size: 1em;
-  block-size:  1em;
+  block-size: 1em;
   flex-shrink: 0;
-  animation:  ds-spin 0.8s linear infinite;
+  animation: ds-spin 0.8s linear infinite;
 }
 
 @keyframes ds-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ── Reduced motion ────────────────────────────────────────────────────────── */

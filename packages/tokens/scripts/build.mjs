@@ -134,7 +134,7 @@ async function combine() {
     fs.readFile(`${DIST}/css/tokens-dark.css`, "utf8"),
   ]);
   const banner =
-    '/**\n * @ds/tokens\n * Auto-generated. Do not edit.\n * Dark mode: <html data-theme="dark">\n */\n\n';
+    '/**\n * @raxora/tokens\n * Auto-generated. Do not edit.\n * Dark mode: <html data-theme="dark">\n */\n\n';
   await fs.writeFile(
     `${DIST}/css/tokens.css`,
     banner + light.trim() + "\n\n" + dark.trim() + "\n",

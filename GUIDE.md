@@ -17,7 +17,7 @@ my-design-system/                        ← monorepo root
 │
 ├── packages/
 │   │
-│   ├── tokens/                          ← @ds/tokens (publishable)
+│   ├── tokens/                          ← @raxora/tokens (publishable)
 │   │   ├── package.json
 │   │   ├── scripts/
 │   │   │   └── build.mjs               ← Style Dictionary build script
@@ -47,7 +47,7 @@ my-design-system/                        ← monorepo root
 │   │       └── tailwind/
 │   │           └── theme.css
 │   │
-│   └── react/                          ← @ds/react (publishable)
+│   └── react/                          ← @raxora/react (publishable)
 │       ├── package.json
 │       ├── src/
 │       │   │
@@ -103,6 +103,7 @@ Figma → Tokens Studio → Export → JSON
 **কিন্তু directly paste করলে হবে না।** তোমার `colors.json` এ top-level keys আছে (`Gray`, `Primary`, etc.)। এগুলো restructure করতে হবে:
 
 তোমার `colors.json` (Tokens Studio output):
+
 ```json
 {
   "Gray": { "50": { "$type": "color", "$value": "#f2f4f5" } },
@@ -111,6 +112,7 @@ Figma → Tokens Studio → Export → JSON
 ```
 
 Restructured `core/color.json`:
+
 ```json
 {
   "color": {
@@ -143,21 +145,24 @@ packages/tokens/src/tokens/semantic/
   "semantic": {
     "color": {
       "background": {
-        "page":    { "$type": "color", "$value": "{color.white}" },
+        "page": { "$type": "color", "$value": "{color.white}" },
         "surface": { "$type": "color", "$value": "{color.gray.50}" }
       },
       "text": {
-        "primary":   { "$type": "color", "$value": "{color.gray.900}" },
+        "primary": { "$type": "color", "$value": "{color.gray.900}" },
         "secondary": { "$type": "color", "$value": "{color.gray.700}" }
       },
       "action": {
-        "primary-bg":       { "$type": "color", "$value": "{color.primary.500}" },
-        "primary-bg-hover": { "$type": "color", "$value": "{color.primary.600}" },
-        "primary-text":     { "$type": "color", "$value": "{color.white}" }
+        "primary-bg": { "$type": "color", "$value": "{color.primary.500}" },
+        "primary-bg-hover": {
+          "$type": "color",
+          "$value": "{color.primary.600}"
+        },
+        "primary-text": { "$type": "color", "$value": "{color.white}" }
       },
       "border": {
         "default": { "$type": "color", "$value": "{color.gray.200}" },
-        "focus":   { "$type": "color", "$value": "{color.primary.500}" }
+        "focus": { "$type": "color", "$value": "{color.primary.500}" }
       }
     }
   }
@@ -184,19 +189,31 @@ packages/tokens/src/tokens/component/
   "component": {
     "button": {
       "border-radius": { "$type": "dimension", "$value": "{radius.md}" },
-      "font-weight":   { "$type": "fontWeight", "$value": "{font.weight.medium}" },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}"
+      },
       "variant": {
         "primary": {
-          "bg":       { "$type": "color", "$value": "{semantic.color.action.primary-bg}" },
-          "bg-hover": { "$type": "color", "$value": "{semantic.color.action.primary-bg-hover}" },
-          "text":     { "$type": "color", "$value": "{semantic.color.action.primary-text}" }
+          "bg": {
+            "$type": "color",
+            "$value": "{semantic.color.action.primary-bg}"
+          },
+          "bg-hover": {
+            "$type": "color",
+            "$value": "{semantic.color.action.primary-bg-hover}"
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{semantic.color.action.primary-text}"
+          }
         }
       },
       "size": {
         "md": {
-          "height":         { "$type": "dimension", "$value": "{size.control-md}" },
+          "height": { "$type": "dimension", "$value": "{size.control-md}" },
           "padding-inline": { "$type": "dimension", "$value": "{space.4}" },
-          "font-size":      { "$type": "dimension", "$value": "{font.size.sm}" }
+          "font-size": { "$type": "dimension", "$value": "{font.size.sm}" }
         }
       }
     }
@@ -242,10 +259,13 @@ node scripts/build.mjs
 
 ```css
 /* dist/css/tokens-light.css */
-:root, [data-theme="light"] {
+:root,
+[data-theme="light"] {
   --color-primary-500: #fa8232;
   --semantic-color-action-primary-bg: var(--color-primary-500);
-  --component-button-variant-primary-bg: var(--semantic-color-action-primary-bg);
+  --component-button-variant-primary-bg: var(
+    --semantic-color-action-primary-bg
+  );
 }
 
 /* dist/css/tokens-dark.css */
@@ -262,13 +282,13 @@ node scripts/build.mjs
 
 হ্যাঁ, কিছুটা। Primer এর pattern:
 
-| Primer | আমাদের |
-|--------|---------|
-| `primitives/` | `src/tokens/core/` |
-| `functional/` | `src/tokens/semantic/` |
-| Per-component CSS | `src/tokens/component/` |
-| Co-located tests | `__tests__/` inside component folder |
-| Separate types file | `button.types.ts` |
+| Primer              | আমাদের                               |
+| ------------------- | ------------------------------------ |
+| `primitives/`       | `src/tokens/core/`                   |
+| `functional/`       | `src/tokens/semantic/`               |
+| Per-component CSS   | `src/tokens/component/`              |
+| Co-located tests    | `__tests__/` inside component folder |
+| Separate types file | `button.types.ts`                    |
 
 **GitHub Primer এর real structure দেখার link:**
 https://github.com/primer/primitives/tree/main/data
@@ -290,14 +310,14 @@ packages/tokens/dist/css/
 
 ```css
 /* packages/react/src/styles/globals.css অথবা app এর main CSS */
-@import '@ds/tokens/css';
+@import "@raxora/tokens/css";
 ```
 
 অথবা JS এ:
 
 ```tsx
 // app's main entry point
-import '@ds/tokens/css';
+import "@raxora/tokens/css";
 ```
 
 **`dist/` folder gitignore করো:**
@@ -319,26 +339,26 @@ Component test (behavior) নয় — token test হলো **contract test**:
 
 ```typescript
 // packages/tokens/src/__tests__/tokens.test.ts
-import { describe, it, expect } from 'vitest';
-import * as tokens from '../dist/js/index.js';
+import { describe, it, expect } from "vitest";
+import * as tokens from "../dist/js/index.js";
 
-describe('Token contracts', () => {
-  it('exports primary brand color', () => {
+describe("Token contracts", () => {
+  it("exports primary brand color", () => {
     // তোমার orange brand color সঠিক আছে কিনা
-    expect(tokens.colorPrimary500).toBe('#fa8232');
+    expect(tokens.colorPrimary500).toBe("#fa8232");
   });
 
-  it('critical semantic tokens are defined', () => {
+  it("critical semantic tokens are defined", () => {
     // Build করার পরে এই tokens exist করছে কিনা
     expect(tokens.semanticColorActionPrimaryBg).toBeDefined();
     expect(tokens.semanticColorBorderFocus).toBeDefined();
   });
 
-  it('color values are valid hex', () => {
+  it("color values are valid hex", () => {
     const hexRegex = /^#[0-9a-fA-F]{3,8}$/;
     Object.entries(tokens).forEach(([name, value]) => {
-      if (name.toLowerCase().includes('color') && typeof value === 'string') {
-        if (value.startsWith('#')) {
+      if (name.toLowerCase().includes("color") && typeof value === "string") {
+        if (value.startsWith("#")) {
           expect(value).toMatch(hexRegex);
         }
       }
@@ -350,19 +370,21 @@ describe('Token contracts', () => {
 **আর CSS output এর test:**
 
 ```typescript
-import { readFileSync } from 'fs';
+import { readFileSync } from "fs";
 
-describe('CSS output', () => {
-  it('generated CSS contains light theme selector', () => {
-    const css = readFileSync('dist/css/tokens.css', 'utf-8');
+describe("CSS output", () => {
+  it("generated CSS contains light theme selector", () => {
+    const css = readFileSync("dist/css/tokens.css", "utf-8");
     expect(css).toContain('[data-theme="light"]');
     expect(css).toContain('[data-theme="dark"]');
   });
 
-  it('uses CSS variable references, not literal values in semantic layer', () => {
-    const css = readFileSync('dist/css/tokens-light.css', 'utf-8');
+  it("uses CSS variable references, not literal values in semantic layer", () => {
+    const css = readFileSync("dist/css/tokens-light.css", "utf-8");
     // Semantic tokens should reference primitives, not hardcode
-    expect(css).toMatch(/--semantic-color-action-primary-bg:\s*var\(--color-primary/);
+    expect(css).toMatch(
+      /--semantic-color-action-primary-bg:\s*var\(--color-primary/,
+    );
   });
 });
 ```
@@ -423,7 +445,7 @@ pnpm build:tokens
 
 ```tsx
 // apps/your-app/src/main.tsx অথবা index.tsx
-import '@ds/tokens/css';  // এটাই সব CSS variables load করে
+import "@raxora/tokens/css"; // এটাই সব CSS variables load করে
 ```
 
 **Step 3:** React package configure করো dependency
@@ -432,7 +454,7 @@ import '@ds/tokens/css';  // এটাই সব CSS variables load করে
 // packages/react/package.json
 {
   "dependencies": {
-    "@ds/tokens": "workspace:*"
+    "@raxora/tokens": "workspace:*"
   }
 }
 ```
@@ -444,10 +466,14 @@ import '@ds/tokens/css';  // এটাই সব CSS variables load করে
 .button[data-variant="primary"] {
   /* Fallback chain: component token → semantic token → raw value */
   background-color: var(
-    --component-button-variant-primary-bg,          /* component level */
-    var(--semantic-color-action-primary-bg,          /* semantic level */
-    var(--color-primary-500,                         /* primitive level */
-    #fa8232))                                        /* hardcoded fallback */
+    --component-button-variant-primary-bg,
+    /* component level */
+    var(
+        --semantic-color-action-primary-bg,
+        /* semantic level */
+        var(--color-primary-500, /* primitive level */ #fa8232)
+      )
+      /* hardcoded fallback */
   );
 }
 ```
@@ -466,8 +492,8 @@ import '@ds/tokens/css';  // এটাই সব CSS variables load করে
 function ThemeToggle() {
   const toggle = () => {
     const html = document.documentElement;
-    const current = html.getAttribute('data-theme') ?? 'light';
-    html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+    const current = html.getAttribute("data-theme") ?? "light";
+    html.setAttribute("data-theme", current === "light" ? "dark" : "light");
   };
   return <button onClick={toggle}>Toggle Theme</button>;
 }
@@ -501,7 +527,7 @@ Screen reader accessible কিন্তু visually invisible।
 
 ```tsx
 <Button iconStart={<TrashIcon />}>
-  <VisuallyHidden>Delete item</VisuallyHidden>  ← SR reads this
+  <VisuallyHidden>Delete item</VisuallyHidden> ← SR reads this
 </Button>
 ```
 
