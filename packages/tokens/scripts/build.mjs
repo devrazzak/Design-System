@@ -5,21 +5,28 @@ import StyleDictionary from "style-dictionary";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, "..");
-const SRC = join(ROOT, "src/tokens");
-const DIST = join(ROOT, "dist");
+const ROOT = join(__dirname, ".."); // raxora-design-system/packages/tokens
+const SRC = join(ROOT, "src/tokens"); // raxora-design-system/packages/tokens/src/tokens
+const DIST = join(ROOT, "dist"); // raxora-design-system/packages/tokens/dist
 
 // Register Tokens Studio transforms + preprocessors
 register(StyleDictionary);
 
-// Register custom transform groups
-// ts/css  = TS transforms + kebab names  (for CSS vars: --color-primary-500)
-// ts/js   = TS transforms + camel names  (for JS:  colorPrimary500)
+/**
+ * Register custom transform groups
+ *
+ * ts/css  = TS transforms + kebab names  (for CSS vars: --color-primary-500)
+ *
+ * ts/js   = TS transforms + camel names  (for JS:  colorPrimary500)
+ */
+
 const tsTransforms = getTransforms({ excludes: [] });
+
 StyleDictionary.registerTransformGroup({
   name: "ts/css",
   transforms: [...tsTransforms, "name/kebab"],
 });
+
 StyleDictionary.registerTransformGroup({
   name: "ts/js",
   transforms: [...tsTransforms, "name/camel"],
@@ -49,7 +56,7 @@ async function ensureDir(dir) {
 }
 
 async function buildLight() {
-  console.log("\n☀️  Light theme...");
+  console.log("\n Light theme...");
   const sd = new StyleDictionary({
     source: [
       `${SRC}/core/**/*.json`,
@@ -99,7 +106,7 @@ async function buildLight() {
 }
 
 async function buildDark() {
-  console.log("\n🌙 Dark theme...");
+  console.log("\n Dark theme...");
   const sd = new StyleDictionary({
     source: [`${SRC}/core/**/*.json`, `${SRC}/semantic/dark.json`],
     preprocessors: ["tokens-studio"],
@@ -154,14 +161,14 @@ async function main() {
   await buildLight();
   await buildDark();
   await combine();
-  console.log(`\n${"=".repeat(44)}\n✅ Done in ${Date.now() - t}ms`);
-  console.log("\n📦 Outputs:");
+  console.log(`\n${"=".repeat(44)}\n Done in ${Date.now() - t}ms`);
+  console.log("\n Outputs:");
   console.log("   dist/css/tokens.css      ← import in your app");
   console.log("   dist/js/index.js         ← JS constants");
   console.log("   dist/tailwind/theme.css  ← Tailwind v4\n");
 }
 
 main().catch((err) => {
-  console.error("\n❌", err.message);
+  console.error("\n", err.message);
   process.exit(1);
 });
