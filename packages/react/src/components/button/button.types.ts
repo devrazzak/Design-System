@@ -1,9 +1,20 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 // ─── Variant & Size ───────────────────────────────────────────────────────────
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
-export type ButtonSize    = 'sm' | 'md' | 'lg';
+export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
+export type ButtonSize = "sm" | "md" | "lg";
+
+// ─── ButtonBase ────────────────────────────────────────────────────────────────
+export interface ButtonBaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * Render as the child element instead of a <button>.
+   * The child element receives all button props.
+   * Use for link-buttons: <ButtonBase asChild><a href="…">…</a></ButtonBase>
+   * @default false
+   */
+  asChild?: boolean;
+}
 
 // ─── Own Props ────────────────────────────────────────────────────────────────
 

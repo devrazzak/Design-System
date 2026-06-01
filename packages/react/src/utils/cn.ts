@@ -8,8 +8,21 @@
  * cn('button', isActive && 'button--active', undefined, 'extra')
  * // → 'button button--active extra'
  */
+
 export function cn(
-  ...classes: Array<string | boolean | undefined | null>
+  ...classes: Array<
+    string | boolean | undefined | null | { [key: string]: boolean }
+  >
 ): string {
-  return classes.filter(Boolean).join(" ");
+  return classes
+    .flatMap((c) => {
+      if (typeof c === "object" && c !== null) {
+        return Object.entries(c)
+          .filter(([_, value]) => value)
+          .map(([key]) => key);
+      }
+      return c;
+    })
+    .filter(Boolean)
+    .join(" ");
 }
