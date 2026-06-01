@@ -1,7 +1,36 @@
+/**
+ * Layout and base styles for all button components.
+ */
+
 .root {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: inherit;
+  width: max-content;
+  max-width: 100%;
   border: none;
   cursor: pointer;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: var(--component-button-focus-outline, var(--outline-focus));
+    outline-offset: var(
+      --component-button-focus-outline-offset,
+      var(--outline-focus-offset)
+    );
+  }
 }
