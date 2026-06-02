@@ -12,7 +12,7 @@
 import { render } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import { describe, expect, it } from "vitest";
-import { Button } from "../button";
+import { Button } from "../Button";
 
 expect.extend(toHaveNoViolations);
 

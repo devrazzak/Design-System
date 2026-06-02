@@ -1,7 +1,7 @@
 import { cn, Slot } from "@raxora/react";
 import { forwardRef } from "react";
-import { ButtonBaseProps } from "./button.types";
 import styles from "./ButtonBase.module.css";
+import { ButtonBaseProps } from "./types";
 
 /**
  * ButtonBase — the unstyled, accessible button component.
@@ -13,10 +13,10 @@ import styles from "./ButtonBase.module.css";
 
 export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
   function ButtonBase(
-    { asChild = false, disabled, className, children, ...props },
+    { asChild = false, disabled, className, children, component, ...rest },
     ref,
   ) {
-    const Comp = asChild ? Slot : "button";
+    const Comp = component ? component : asChild ? Slot : "button";
 
     return (
       <Comp
@@ -24,8 +24,8 @@ export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
         className={cn(styles.root, className)}
         disabled={!asChild ? disabled : undefined}
         aria-disabled={asChild && disabled ? true : undefined}
-        type={!asChild ? (props.type ?? "button") : undefined}
-        {...props}
+        type={!asChild ? (rest.type ?? "button") : undefined}
+        {...rest}
       >
         {children}
       </Comp>
