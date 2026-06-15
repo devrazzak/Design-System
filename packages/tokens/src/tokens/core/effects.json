@@ -17,6 +17,13 @@
     "90": { "$value": "0.9", "$type": "number" },
     "100": { "$value": "1", "$type": "number" }
   },
+  "motion": {
+    "duration": {
+      "fast": { "$type": "duration", "$value": "150ms" },
+      "normal": { "$type": "duration", "$value": "250ms" },
+      "slow": { "$type": "duration", "$value": "400ms" }
+    }
+  },
   "zIndex": {
     "hide": { "$type": "number", "$value": -1 },
     "base": { "$type": "number", "$value": 0 },

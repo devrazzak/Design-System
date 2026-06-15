@@ -1,0 +1,90 @@
+{
+  "$metadata": {
+    "type": "semantic",
+    "theme": "dim",
+    "description": "Dim theme semantic overrides. Same keys as light and dark, tuned for a softer low-contrast dark surface."
+  },
+  "semantic": {
+    "color": {
+      "background": {
+        "page": { "$type": "color", "$value": "{color.gray.800}" },
+        "surface": { "$type": "color", "$value": "{color.gray.700}" },
+        "subtle": { "$type": "color", "$value": "{color.gray.600}" },
+        "muted": { "$type": "color", "$value": "{color.gray.500}" },
+        "inverse": { "$type": "color", "$value": "{color.gray.50}" }
+      },
+      "text": {
+        "primary": { "$type": "color", "$value": "{color.gray.100}" },
+        "secondary": { "$type": "color", "$value": "{color.gray.200}" },
+        "tertiary": { "$type": "color", "$value": "{color.gray.400}" },
+        "disabled": { "$type": "color", "$value": "{color.gray.500}" },
+        "inverse": { "$type": "color", "$value": "{color.gray.900}" },
+        "link": { "$type": "color", "$value": "{color.secondary.300}" },
+        "link-hover": { "$type": "color", "$value": "{color.secondary.200}" }
+      },
+      "border": {
+        "default": { "$type": "color", "$value": "{color.gray.600}" },
+        "strong": { "$type": "color", "$value": "{color.gray.500}" },
+        "focus": { "$type": "color", "$value": "{color.primary.400}" },
+        "disabled": { "$type": "color", "$value": "{color.gray.600}" }
+      },
+      "action": {
+        "primary-bg": { "$type": "color", "$value": "{color.primary.500}" },
+        "primary-bg-hover": {
+          "$type": "color",
+          "$value": "{color.primary.400}"
+        },
+        "primary-bg-active": {
+          "$type": "color",
+          "$value": "{color.primary.300}"
+        },
+        "primary-bg-disabled": {
+          "$type": "color",
+          "$value": "{color.gray.600}"
+        },
+        "primary-text": { "$type": "color", "$value": "{color.white}" },
+        "primary-text-disabled": {
+          "$type": "color",
+          "$value": "{color.gray.500}"
+        },
+
+        "secondary-bg": { "$type": "color", "$value": "{color.gray.800}" },
+        "secondary-bg-hover": {
+          "$type": "color",
+          "$value": "{color.gray.700}"
+        },
+        "secondary-bg-active": {
+          "$type": "color",
+          "$value": "{color.gray.600}"
+        },
+        "secondary-border": { "$type": "color", "$value": "{color.gray.500}" },
+        "secondary-text": { "$type": "color", "$value": "{color.gray.100}" },
+
+        "ghost-bg-hover": { "$type": "color", "$value": "{color.gray.700}" },
+        "ghost-text": { "$type": "color", "$value": "{color.gray.200}" },
+
+        "danger-bg": { "$type": "color", "$value": "{color.danger.600}" },
+        "danger-bg-hover": { "$type": "color", "$value": "{color.danger.500}" },
+        "danger-bg-active": {
+          "$type": "color",
+          "$value": "{color.danger.400}"
+        },
+        "danger-text": { "$type": "color", "$value": "{color.white}" }
+      },
+      "feedback": {
+        "success-bg": { "$type": "color", "$value": "{color.success.900}" },
+        "success-text": { "$type": "color", "$value": "{color.success.300}" },
+        "success-border": { "$type": "color", "$value": "{color.success.700}" },
+        "warning-bg": { "$type": "color", "$value": "{color.warning.900}" },
+        "warning-text": { "$type": "color", "$value": "{color.warning.300}" },
+        "warning-border": { "$type": "color", "$value": "{color.warning.700}" },
+        "danger-bg": { "$type": "color", "$value": "{color.danger.900}" },
+        "danger-text": { "$type": "color", "$value": "{color.danger.300}" },
+        "danger-border": { "$type": "color", "$value": "{color.danger.700}" },
+        "info-bg": { "$type": "color", "$value": "{color.secondary.900}" },
+        "info-text": { "$type": "color", "$value": "{color.secondary.300}" },
+        "info-border": { "$type": "color", "$value": "{color.secondary.700}" }
+      }
+    }
+  }
+}

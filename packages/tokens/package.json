@@ -9,8 +9,17 @@
       "types": "./dist/js/index.d.ts"
     },
     "./css": "./dist/css/tokens.css",
-    "./css/light": "./dist/css/tokens-light.css",
-    "./css/dark": "./dist/css/tokens-dark.css",
+    "./css/core": "./dist/css/core.css",
+    "./css/light": "./dist/css/themes/light.css",
+    "./css/dark": "./dist/css/themes/dark.css",
+    "./css/dim": "./dist/css/themes/dim.css",
+    "./css/high-contrast-light": "./dist/css/themes/high-contrast-light.css",
+    "./css/high-contrast-dark": "./dist/css/themes/high-contrast-dark.css",
+    "./css/themes/light": "./dist/css/themes/light.css",
+    "./css/themes/dark": "./dist/css/themes/dark.css",
+    "./css/themes/dim": "./dist/css/themes/dim.css",
+    "./css/themes/high-contrast-light": "./dist/css/themes/high-contrast-light.css",
+    "./css/themes/high-contrast-dark": "./dist/css/themes/high-contrast-dark.css",
     "./tailwind": "./dist/tailwind/theme.css"
   },
   "files": [
