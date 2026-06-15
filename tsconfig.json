@@ -1,17 +1,6 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "strict": true,
-    "exactOptionalPropertyTypes": true,
-    "noUncheckedIndexedAccess": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
     "paths": {
       "@raxora/tokens": ["./packages/tokens/src/index.ts"],
       "@raxora/tokens/css": ["./packages/tokens/dist/css/tokens.css"],
@@ -19,6 +8,6 @@
       "@raxora/react/*": ["./packages/react/src/*"]
     }
   },
-  "include": ["packages/*/src"],
+  "include": ["packages/*/src", "vitest.config.ts", "vitest.setup.ts"],
   "exclude": ["**/node_modules", "**/dist"]
 }

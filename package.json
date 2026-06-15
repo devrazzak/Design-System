@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint packages/*/src --ext .ts,.tsx",
+    "lint": "eslint .",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "pnpm build && changeset publish"

@@ -5,28 +5,26 @@
   },
   "color": {
     "white": {
+      "$description": "Pure white",
       "$type": "color",
-      "$value": "#ffffff",
-      "$description": "Pure white"
+      "$value": "#ffffff"
     },
+
     "black": {
-      "$type": "color",
-      "$value": "#000000",
-      "$description": "Pure black"
-    },
-    "gray": {
+      "$description": "Black for text and dark backgrounds",
       "50": { "$type": "color", "$value": "#f2f4f5" },
       "100": { "$type": "color", "$value": "#e4e7e9" },
       "200": { "$type": "color", "$value": "#c9cfd2" },
       "300": { "$type": "color", "$value": "#adb7bc" },
-      "400": { "$type": "color", "$value": "#929fa5" },
-      "500": { "$type": "color", "$value": "#77878f" },
-      "600": { "$type": "color", "$value": "#5f6c72" },
-      "700": { "$type": "color", "$value": "#475156" },
-      "800": { "$type": "color", "$value": "#303639" },
-      "900": { "$type": "color", "$value": "#191c1f" }
+      "400": { "$type": "color", "$value": "#555555" },
+      "500": { "$type": "color", "$value": "#444444" },
+      "600": { "$type": "color", "$value": "#333333" },
+      "700": { "$type": "color", "$value": "#222222" },
+      "800": { "$type": "color", "$value": "#111111" },
+      "900": { "$type": "color", "$value": "#000000" }
     },
-    "primary": {
+
+    "orange": {
       "$description": "Orange brand color — the main action color",
       "50": { "$type": "color", "$value": "#fff3eb" },
       "100": { "$type": "color", "$value": "#ffe7d6" },
@@ -39,7 +37,8 @@
       "800": { "$type": "color", "$value": "#663514" },
       "900": { "$type": "color", "$value": "#331b0a" }
     },
-    "secondary": {
+
+    "blue": {
       "$description": "Blue secondary color",
       "50": { "$type": "color", "$value": "#eaf6fe" },
       "100": { "$type": "color", "$value": "#d5edfd" },
@@ -52,7 +51,22 @@
       "800": { "$type": "color", "$value": "#124261" },
       "900": { "$type": "color", "$value": "#092131" }
     },
-    "success": {
+
+    "gray": {
+      "$description": "Gray — neutral colors for backgrounds, borders, and text",
+      "50": { "$type": "color", "$value": "#f2f4f5" },
+      "100": { "$type": "color", "$value": "#e4e7e9" },
+      "200": { "$type": "color", "$value": "#c9cfd2" },
+      "300": { "$type": "color", "$value": "#adb7bc" },
+      "400": { "$type": "color", "$value": "#929fa5" },
+      "500": { "$type": "color", "$value": "#77878f" },
+      "600": { "$type": "color", "$value": "#5f6c72" },
+      "700": { "$type": "color", "$value": "#475156" },
+      "800": { "$type": "color", "$value": "#303639" },
+      "900": { "$type": "color", "$value": "#191c1f" }
+    },
+
+    "green": {
       "$description": "Green — positive feedback, completed states",
       "50": { "$type": "color", "$value": "#eaf7e9" },
       "100": { "$type": "color", "$value": "#d5f0d3" },
@@ -65,7 +79,8 @@
       "800": { "$type": "color", "$value": "#12470e" },
       "900": { "$type": "color", "$value": "#092407" }
     },
-    "warning": {
+
+    "yellow": {
       "$description": "Yellow — caution, review-needed states",
       "50": { "$type": "color", "$value": "#fdfae7" },
       "100": { "$type": "color", "$value": "#fbf4ce" },
@@ -78,7 +93,8 @@
       "800": { "$type": "color", "$value": "#5e5005" },
       "900": { "$type": "color", "$value": "#2f2802" }
     },
-    "danger": {
+
+    "red": {
       "$description": "Red — destructive actions, error states",
       "50": { "$type": "color", "$value": "#fdeeee" },
       "100": { "$type": "color", "$value": "#fcdede" },

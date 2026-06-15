@@ -3,62 +3,19 @@
     "type": "core",
     "description": "Motion and shadow primitives"
   },
-  "motion": {
-    "duration": {
-      "instant": { "$type": "duration", "$value": "0ms" },
-      "fast": { "$type": "duration", "$value": "100ms" },
-      "normal": { "$type": "duration", "$value": "200ms" },
-      "slow": { "$type": "duration", "$value": "300ms" },
-      "slower": { "$type": "duration", "$value": "500ms" }
-    },
-    "easing": {
-      "standard": { "$type": "cubicBezier", "$value": [0.4, 0, 0.2, 1] },
-      "decelerate": { "$type": "cubicBezier", "$value": [0.0, 0, 0.2, 1] },
-      "accelerate": { "$type": "cubicBezier", "$value": [0.4, 0, 1, 1] }
-    }
-  },
-  "shadow": {
-    "sm": {
-      "$type": "shadow",
-      "$value": {
-        "offsetX": "0px",
-        "offsetY": "1px",
-        "blur": "2px",
-        "spread": "0px",
-        "color": "#0000000d"
-      }
-    },
-    "md": {
-      "$type": "shadow",
-      "$value": {
-        "offsetX": "0px",
-        "offsetY": "4px",
-        "blur": "8px",
-        "spread": "0px",
-        "color": "#00000014"
-      }
-    },
-    "lg": {
-      "$type": "shadow",
-      "$value": {
-        "offsetX": "0px",
-        "offsetY": "8px",
-        "blur": "24px",
-        "spread": "0px",
-        "color": "#0000001f"
-      }
-    },
-    "focus": {
-      "$type": "shadow",
-      "$value": {
-        "offsetX": "0px",
-        "offsetY": "0px",
-        "blur": "0px",
-        "spread": "3px",
-        "color": "#fa823240"
-      },
-      "$description": "Focus ring — uses primary color at 25% opacity"
-    }
+  "opacity": {
+    "0": { "$value": "0", "$type": "number" },
+    "5": { "$value": "0.05", "$type": "number" },
+    "10": { "$value": "0.1", "$type": "number" },
+    "20": { "$value": "0.2", "$type": "number" },
+    "30": { "$value": "0.3", "$type": "number" },
+    "40": { "$value": "0.4", "$type": "number" },
+    "50": { "$value": "0.5", "$type": "number" },
+    "60": { "$value": "0.6", "$type": "number" },
+    "70": { "$value": "0.7", "$type": "number" },
+    "80": { "$value": "0.8", "$type": "number" },
+    "90": { "$value": "0.9", "$type": "number" },
+    "100": { "$value": "1", "$type": "number" }
   },
   "zIndex": {
     "hide": { "$type": "number", "$value": -1 },

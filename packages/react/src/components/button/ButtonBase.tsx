@@ -1,7 +1,7 @@
 import { cn, Slot } from "@raxora/react";
 import { forwardRef } from "react";
 import styles from "./ButtonBase.module.css";
-import { ButtonBaseProps } from "./types";
+import type { ButtonBaseProps } from "./types";
 
 /**
  * ButtonBase — the unstyled, accessible button component.
@@ -16,7 +16,7 @@ export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
     { asChild = false, disabled, className, children, component, ...rest },
     ref,
   ) {
-    const Comp = component ? component : asChild ? Slot : "button";
+    const Comp = component ?? (asChild ? Slot : "button");
 
     return (
       <Comp

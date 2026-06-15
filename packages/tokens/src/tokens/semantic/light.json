@@ -9,28 +9,23 @@
       "background": {
         "page": {
           "$type": "color",
-          "$value": "{color.white}",
-          "$description": "Main page background"
+          "$value": "{color.white}"
         },
         "surface": {
           "$type": "color",
-          "$value": "{color.gray.50}",
-          "$description": "Card, panel surfaces"
+          "$value": "{color.gray.50}"
         },
         "subtle": {
           "$type": "color",
-          "$value": "{color.gray.100}",
-          "$description": "Subtle backgrounds, hover"
+          "$value": "{color.gray.100}"
         },
         "muted": {
           "$type": "color",
-          "$value": "{color.gray.200}",
-          "$description": "Disabled backgrounds"
+          "$value": "{color.gray.200}"
         },
         "inverse": {
           "$type": "color",
-          "$value": "{color.gray.900}",
-          "$description": "Dark surface on light bg"
+          "$value": "{color.gray.900}"
         }
       },
       "text": {

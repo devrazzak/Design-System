@@ -1,9 +1,10 @@
 packages:
   - "packages/*"
   - "apps/*"
+  - "tooling/*"
 allowBuilds:
-  '@bundled-es-modules/glob': false
-  '@swc/core': false
+  "@bundled-es-modules/glob": false
+  es5-ext: false
   esbuild: false
+  sharp: false
   style-dictionary: false
-  unrs-resolver: false

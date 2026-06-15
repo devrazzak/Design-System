@@ -22,7 +22,6 @@ import {
   forwardRef,
   isValidElement,
   type HTMLAttributes,
-  type ReactElement,
   type ReactNode,
   type Ref,
 } from "react";
@@ -52,6 +51,10 @@ interface SlotProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode;
 }
 
+type SlotChildProps = HTMLAttributes<HTMLElement> & {
+  ref?: Ref<unknown>;
+};
+
 // ─── Slot ─────────────────────────────────────────────────────────────────────
 /**
  * Slot merges its props onto its single child element.
@@ -60,33 +63,31 @@ interface SlotProps extends HTMLAttributes<HTMLElement> {
  */
 const Slot = forwardRef<HTMLElement, SlotProps>(
   ({ children, ...slotProps }, ref) => {
-    if (!isValidElement(children)) {
+    if (!isValidElement<SlotChildProps>(children)) {
       if (Children.count(children) > 1) {
         throw new Error("<Slot> must have exactly one child");
       }
       return null;
     }
 
-    const child = children as ReactElement<
-      Record<string, unknown> & { ref?: Ref<unknown> }
-    >;
+    const child = children;
 
     return cloneElement(child, {
       ...slotProps,
       ...child.props,
       // Merge className (slot class + child class)
       className: mergeClasses(
-        slotProps.className as string | undefined,
-        child.props.className as string | undefined,
+        slotProps.className,
+        child.props.className,
       ),
       // Compose event handlers so both fire
       onClick: composeEventHandlers(
-        slotProps.onClick as ((e: unknown) => void) | undefined,
-        child.props.onClick as ((e: unknown) => void) | undefined,
+        slotProps.onClick,
+        child.props.onClick,
       ),
       onKeyDown: composeEventHandlers(
-        slotProps.onKeyDown as ((e: unknown) => void) | undefined,
-        child.props.onKeyDown as ((e: unknown) => void) | undefined,
+        slotProps.onKeyDown,
+        child.props.onKeyDown,
       ),
       // Forward ref to child's element
       ref,

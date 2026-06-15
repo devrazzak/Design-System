@@ -133,14 +133,14 @@ export const FullWidth: Story = {
 // Using plain text as icon placeholder (swap for your icon library)
 export const WithIconStart: Story = {
   args: {
-    iconStart: <span>+</span>,
+    leftIcon: <span>+</span>,
     children: "Add item",
   },
 };
 
 export const WithIconEnd: Story = {
   args: {
-    iconEnd: <span>→</span>,
+    rightIcon: <span>→</span>,
     children: "Continue",
   },
 };
@@ -148,7 +148,7 @@ export const WithIconEnd: Story = {
 export const IconOnly: Story = {
   args: {
     "aria-label": "Delete item",
-    iconStart: <span aria-hidden="true">🗑</span>,
+    leftIcon: <span aria-hidden="true">🗑</span>,
     children: undefined,
   },
 };

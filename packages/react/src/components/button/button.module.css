@@ -1,46 +1,30 @@
 /**
- * Button styles
- * =============
  * Rules:
  *   1. ONLY reference CSS custom properties from @raxora/tokens — never raw values.
- *   2. Variants via data-* attribute selectors — no class name concatenation.
- *   3. Native CSS nesting — no Sass, no preprocessors.
- *   4. Logical properties for RTL support (padding-inline, not padding-left).
- *   5. prefers-reduced-motion respected at the bottom.
  */
 
-/* ── Base ──────────────────────────────────────────────────────────────────── */
 .button {
-  /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--component-button-gap, var(--space-2));
-
-  /* Sizing — size variant adjusts these via data-size */
   block-size: var(--component-button-size-md-height, var(--size-control-md));
   padding-block: var(--component-button-size-md-padding-block, var(--space-2));
   padding-inline: var(
     --component-button-size-md-padding-inline,
     var(--space-4)
   );
-
-  /* Typography */
   font-family: var(--font-family-sans, system-ui, sans-serif);
   font-size: var(--component-button-size-md-font-size, var(--font-size-sm));
   font-weight: var(--component-button-font-weight, var(--font-weight-medium));
   line-height: var(--font-line-height-tight, 1.25);
   white-space: nowrap;
   text-decoration: none;
-
-  /* Visual */
   border: 1px solid transparent;
   border-radius: var(--component-button-border-radius, var(--radius-md));
   cursor: pointer;
   user-select: none;
   appearance: none;
-
-  /* Transitions */
   transition-property:
     background-color, border-color, color, box-shadow, transform;
   transition-duration: var(
@@ -51,44 +35,32 @@
     --motion-easing-standard,
     cubic-bezier(0.4, 0, 0.2, 1)
   );
-
-  /* WCAG 2.2: minimum touch target 24×24px */
   min-inline-size: 24px;
   min-block-size: 24px;
 
-  /* ── Focus ring ── */
-  /* Using :focus-visible — only shows ring for keyboard navigation, */
-  /* not mouse click. Respects user preference for pointer devices.  */
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 var(--component-button-focus-ring-width, 3px)
       var(--semantic-color-border-focus, var(--color-primary-500));
   }
 
-  /* ── Hover — only when not disabled ── */
   &:hover:not(:disabled) {
     transform: translateY(-1px);
   }
 
-  /* ── Active / pressed ── */
   &:active:not(:disabled) {
     transform: translateY(0);
   }
 
-  /* ── Disabled ── */
-  /* Note: we do NOT use pointer-events:none — that hides the button  */
-  /* from screen readers. opacity + cursor:not-allowed is correct.    */
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
 
-  /* ── Loading ── */
   &[data-loading] {
     cursor: wait;
   }
 
-  /* ── Full width ── */
   &[data-full-width] {
     inline-size: 100%;
   }
@@ -166,17 +138,24 @@
 
 /* Ghost */
 .button[data-variant="ghost"] {
-  background-color: var(--component-button-variant-ghost-bg, transparent);
+  background-color: transparent;
   border-color: transparent;
   color: var(
     --component-button-variant-ghost-text,
-    var(--semantic-color-action-ghost-text)
+    var(--semantic-color-text-primary)
   );
 
   &:hover:not(:disabled) {
     background-color: var(
       --component-button-variant-ghost-bg-hover,
-      var(--semantic-color-action-ghost-bg-hover)
+      color-mix(in srgb, currentColor 8%, transparent)
+    );
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(
+      --component-button-variant-ghost-bg-active,
+      color-mix(in srgb, currentColor 12%, transparent)
     );
   }
 }
@@ -208,8 +187,6 @@
   }
 }
 
-/* ── Sizes ─────────────────────────────────────────────────────────────────── */
-
 .button[data-size="sm"] {
   block-size: var(--component-button-size-sm-height, var(--size-control-sm));
   padding-block: var(--component-button-size-sm-padding-block, var(--space-1));
@@ -230,9 +207,6 @@
   font-size: var(--component-button-size-lg-font-size, var(--font-size-md));
 }
 
-/* ── Internals ─────────────────────────────────────────────────────────────── */
-
-/* Icon wrapper — sizes icon to match font-size */
 .icon {
   display: inline-flex;
   align-items: center;
@@ -248,7 +222,6 @@
   }
 }
 
-/* Label — text content; allows truncation */
 .label {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -271,21 +244,5 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-/* ── Reduced motion ────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .button {
-    transition: none;
-
-    &:hover:not(:disabled),
-    &:active:not(:disabled) {
-      transform: none;
-    }
-  }
-
-  .spinner {
-    animation: none;
   }
 }
