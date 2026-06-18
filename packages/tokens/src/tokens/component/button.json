@@ -9,7 +9,7 @@
       "border-radius": { "$type": "dimension", "$value": "{radius.md}" },
       "font-weight": {
         "$type": "fontWeight",
-        "$value": "{font.weight.medium}"
+        "$value": 500
       },
       "gap": { "$type": "dimension", "$value": "{space.2}" },
       "transition-duration": {

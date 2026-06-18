@@ -4,11 +4,7 @@
     "description": "Primitive color tokens — raw values from Figma. Never reference these directly in components. Use semantic tokens instead."
   },
   "color": {
-    "white": {
-      "$description": "Pure white",
-      "$type": "color",
-      "$value": "#ffffff"
-    },
+    "white": { "$type": "color", "$value": "#ffffff" },
 
     "black": {
       "$description": "Black for text and dark backgrounds",
@@ -16,8 +12,8 @@
       "100": { "$type": "color", "$value": "#e4e7e9" },
       "200": { "$type": "color", "$value": "#c9cfd2" },
       "300": { "$type": "color", "$value": "#adb7bc" },
-      "400": { "$type": "color", "$value": "#555555" },
-      "500": { "$type": "color", "$value": "#444444" },
+      "400": { "$type": "color", "$value": "#272727" },
+      "500": { "$type": "color", "$value": "#282828" },
       "600": { "$type": "color", "$value": "#333333" },
       "700": { "$type": "color", "$value": "#222222" },
       "800": { "$type": "color", "$value": "#111111" },
@@ -106,76 +102,6 @@
       "700": { "$type": "color", "$value": "#8f3535" },
       "800": { "$type": "color", "$value": "#5f2323" },
       "900": { "$type": "color", "$value": "#301212" }
-    },
-
-    "primary": {
-      "$description": "Primary brand alias for semantic tokens",
-      "50": { "$type": "color", "$value": "{color.orange.50}" },
-      "100": { "$type": "color", "$value": "{color.orange.100}" },
-      "200": { "$type": "color", "$value": "{color.orange.200}" },
-      "300": { "$type": "color", "$value": "{color.orange.300}" },
-      "400": { "$type": "color", "$value": "{color.orange.400}" },
-      "500": { "$type": "color", "$value": "{color.orange.500}" },
-      "600": { "$type": "color", "$value": "{color.orange.600}" },
-      "700": { "$type": "color", "$value": "{color.orange.700}" },
-      "800": { "$type": "color", "$value": "{color.orange.800}" },
-      "900": { "$type": "color", "$value": "{color.orange.900}" }
-    },
-
-    "secondary": {
-      "$description": "Secondary brand alias for semantic tokens",
-      "50": { "$type": "color", "$value": "{color.blue.50}" },
-      "100": { "$type": "color", "$value": "{color.blue.100}" },
-      "200": { "$type": "color", "$value": "{color.blue.200}" },
-      "300": { "$type": "color", "$value": "{color.blue.300}" },
-      "400": { "$type": "color", "$value": "{color.blue.400}" },
-      "500": { "$type": "color", "$value": "{color.blue.500}" },
-      "600": { "$type": "color", "$value": "{color.blue.600}" },
-      "700": { "$type": "color", "$value": "{color.blue.700}" },
-      "800": { "$type": "color", "$value": "{color.blue.800}" },
-      "900": { "$type": "color", "$value": "{color.blue.900}" }
-    },
-
-    "success": {
-      "$description": "Success alias for semantic tokens",
-      "50": { "$type": "color", "$value": "{color.green.50}" },
-      "100": { "$type": "color", "$value": "{color.green.100}" },
-      "200": { "$type": "color", "$value": "{color.green.200}" },
-      "300": { "$type": "color", "$value": "{color.green.300}" },
-      "400": { "$type": "color", "$value": "{color.green.400}" },
-      "500": { "$type": "color", "$value": "{color.green.500}" },
-      "600": { "$type": "color", "$value": "{color.green.600}" },
-      "700": { "$type": "color", "$value": "{color.green.700}" },
-      "800": { "$type": "color", "$value": "{color.green.800}" },
-      "900": { "$type": "color", "$value": "{color.green.900}" }
-    },
-
-    "warning": {
-      "$description": "Warning alias for semantic tokens",
-      "50": { "$type": "color", "$value": "{color.yellow.50}" },
-      "100": { "$type": "color", "$value": "{color.yellow.100}" },
-      "200": { "$type": "color", "$value": "{color.yellow.200}" },
-      "300": { "$type": "color", "$value": "{color.yellow.300}" },
-      "400": { "$type": "color", "$value": "{color.yellow.400}" },
-      "500": { "$type": "color", "$value": "{color.yellow.500}" },
-      "600": { "$type": "color", "$value": "{color.yellow.600}" },
-      "700": { "$type": "color", "$value": "{color.yellow.700}" },
-      "800": { "$type": "color", "$value": "{color.yellow.800}" },
-      "900": { "$type": "color", "$value": "{color.yellow.900}" }
-    },
-
-    "danger": {
-      "$description": "Danger alias for semantic tokens",
-      "50": { "$type": "color", "$value": "{color.red.50}" },
-      "100": { "$type": "color", "$value": "{color.red.100}" },
-      "200": { "$type": "color", "$value": "{color.red.200}" },
-      "300": { "$type": "color", "$value": "{color.red.300}" },
-      "400": { "$type": "color", "$value": "{color.red.400}" },
-      "500": { "$type": "color", "$value": "{color.red.500}" },
-      "600": { "$type": "color", "$value": "{color.red.600}" },
-      "700": { "$type": "color", "$value": "{color.red.700}" },
-      "800": { "$type": "color", "$value": "{color.red.800}" },
-      "900": { "$type": "color", "$value": "{color.red.900}" }
     }
   }
 }
