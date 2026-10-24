@@ -19,10 +19,6 @@ export interface ButtonProps extends ButtonBaseProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   loading?: boolean;
-  /**
-   * Where to render the loading spinner. `auto` places it left when a leftIcon
-   * exists (or by default), otherwise right when only an end icon exists.
-   */
   loadingPosition?: "auto" | "left" | "right";
   iconStart?: ReactNode;
   iconEnd?: ReactNode;
