@@ -9,6 +9,7 @@ import type { ButtonBaseProps } from "./types";
  * Supports rendering as a child element (e.g. <a>) for link-buttons.
  * Handles disabled state and accessibility attributes.
  * Does not include any visual styles — these are added in the Button component.
+ *
  */
 
 export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
